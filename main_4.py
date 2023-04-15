@@ -21,6 +21,7 @@ class Node:
         self.right = None
         self.color = "red"
 
+
 class RedBlackTree():
 
     COLOR_RED = "red"
@@ -50,13 +51,13 @@ class RedBlackTree():
         return my_node != None and my_node.color == RedBlackTree.COLOR_RED
 
     def swap_colors(self, node1, node2):
-        # Метод меняет цвета нод 
+        # Метод меняет цвета нод
         temp = node1.color
         node1.color = node2.color
         node2.color = temp
 
     def insert(self, data):
-        # Метод вставляет ноду с указанным значением в дерево. Если нет корневой ноды, то 
+        # Метод вставляет ноду с указанным значением в дерево. Если нет корневой ноды, то
         # нода создается и устанавливается как корневая
         node = None
         if self.root:
@@ -95,42 +96,43 @@ class RedBlackTree():
             my_node.right.color = RedBlackTree.COLOR_BLACK
         return my_node
 
-    def draw_tree(self,node, offset=0):
+    def draw_tree(self, node, offset=0):
         # Метод для отображения дерева
         if node is not None:
             self.draw_tree(node.right, offset + 4)
             print(' ' * offset + str(node.data) + ' (' + node.color + ')')
             self.draw_tree(node.left, offset + 4)
 
+
 if __name__ == "__main__":
-     node = RedBlackTree()
-     print("...............")
-     node.insert(10)
-     node.draw_tree(node.root)
-     print("-----------------------")
-     node.insert(30)
-     node.draw_tree(node.root)
-     print("-----------------------")
-     node.insert(20)
-     node.draw_tree(node.root)
-     print("-----------------------")
-     node.insert(50)
-     node.draw_tree(node.root)
-     print("-----------------------")
-     node.insert(90)
-     node.draw_tree(node.root)
-     print("-----------------------")
-     node.insert(15)
-     node.draw_tree(node.root)
-     print("-----------------------")
-     node.insert(5)
-     node.draw_tree(node.root)
-     print("-----------------------")
-     node.insert(95)
-     node.draw_tree(node.root)
-     print("-----------------------")
-     node.insert(60)
-     node.draw_tree(node.root)
-     print("-----------------------")
-     node.insert(40)
-     node.draw_tree(node.root)
+    node = RedBlackTree()
+    print("...............")
+    node.insert(10)
+    node.draw_tree(node.root)
+    print("-----------------------")
+    node.insert(30)
+    node.draw_tree(node.root)
+    print("-----------------------")
+    node.insert(20)
+    node.draw_tree(node.root)
+    print("-----------------------")
+    node.insert(50)
+    node.draw_tree(node.root)
+    print("-----------------------")
+    node.insert(90)
+    node.draw_tree(node.root)
+    print("-----------------------")
+    node.insert(15)
+    node.draw_tree(node.root)
+    print("-----------------------")
+    node.insert(5)
+    node.draw_tree(node.root)
+    print("-----------------------")
+    node.insert(95)
+    node.draw_tree(node.root)
+    print("-----------------------")
+    node.insert(60)
+    node.draw_tree(node.root)
+    print("-----------------------")
+    node.insert(40)
+    node.draw_tree(node.root)
